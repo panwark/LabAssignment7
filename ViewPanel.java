@@ -20,15 +20,10 @@ import javax. swing. table.DefaultTableModel;
 import model.Patient;
 import util.DatabaseConnector;
 
-/**
- *
- * @author gauravvraii
- */
+
 public class ViewPanelNew extends javax.swing.JPanel implements Printable {
 
-    /**
-     * Creates new form formPanel
-     */
+ 
     private ArrayList<Patient> patients; 
     private Patient selectedPatient;
     
@@ -244,7 +239,7 @@ public class ViewPanelNew extends javax.swing.JPanel implements Printable {
             newPatient.setName(nameTextField.getText());
             //insert into db
             DatabaseConnector.updatePatient(selectedPatient, newPatient);
-            JOptionPane.showMessageDialog(null,"User Updated Successfully","Successful Update",JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(null,"Patient Updated Successfully","Success",JOptionPane.INFORMATION_MESSAGE); 
             clearFields();
             populateTable();
         } catch (Exception e) {
@@ -262,7 +257,7 @@ public class ViewPanelNew extends javax.swing.JPanel implements Printable {
         try {
             selectedPatient = patients.get(selectedIndex);
             DatabaseConnector.deletePatient(selectedPatient);
-            JOptionPane.showMessageDialog(null,"User Deleted Successfully", "Successfully Deleted",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Patient Deleted Successfully", "Success",JOptionPane.INFORMATION_MESSAGE);
             clearFields();
             populateTable();
         } catch (Exception e) {
